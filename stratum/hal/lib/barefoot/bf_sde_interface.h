@@ -124,9 +124,11 @@ class BfSdeInterface {
     // modifying counter values without touching the action.
     virtual ::util::Status SetOnlyCounterData(uint64 bytes, uint64 packets) = 0;
 
-    // Get the counter values.
-    virtual ::util::Status GetCounterData(uint64* bytes,
-                                          uint64* packets) const = 0;
+    // Get the byte counter value.
+    virtual ::util::Status GetByteCounter(uint64* bytes) const = 0;
+
+    // Get the packet counter value.
+    virtual ::util::Status GetPacketCounter(uint64* packets) const = 0;
 
     // Get the action ID.
     virtual ::util::Status GetActionId(int* action_id) const = 0;
